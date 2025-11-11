@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-blue-900/50 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10  mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -33,10 +33,7 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="flex justify-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20">
-              <span className="relative w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span className="text-sm text-white font-semibold">Live Since 2025 • Serving 5000+ Professionals</span>
-            </div>
+           
           </motion.div>
 
           {/* Main Headline */}
@@ -48,7 +45,7 @@ export default function Hero() {
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
               Transform Your
-              <br />
+            {" "}
               <span className="bg-gradient-to-r from-blue-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Business Operations
               </span>
@@ -67,7 +64,7 @@ export default function Hero() {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -84,7 +81,7 @@ export default function Hero() {
             <button className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/60">
               Learn More
             </button>
-          </motion.div>
+          </motion.div> */}
 
           {/* Stats */}
           <motion.div

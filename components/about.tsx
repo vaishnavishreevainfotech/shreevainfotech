@@ -13,7 +13,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
+    <section id="about" className="py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
       <div className="absolute inset-0 z-0">
         <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-primary/20 to-accent/10 rounded-full blur-3xl" />
         <img

@@ -12,7 +12,7 @@ export default function Stats() {
   ]
 
   return (
-    <section id="stats" className="py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section id="stats" className="py-10 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.div
