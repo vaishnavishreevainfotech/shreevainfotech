@@ -1,11 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Mail } from "lucide-react"
 
 export default function CTA() {
   return (
-    <section id="cta" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="cta" className="py-1 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute -top-96 -left-96 w-full h-full bg-gradient-to-br from-primary/30 to-transparent rounded-full blur-3xl" />
         <div className="absolute -bottom-96 -right-96 w-full h-full bg-gradient-to-tl from-accent/20 to-transparent rounded-full blur-3xl" />
@@ -25,7 +25,7 @@ export default function CTA() {
           className="text-center space-y-8 py-20"
         >
           <motion.h2
-            className="text-5xl lg:text-7xl font-bold leading-tight"
+            className="text-2xl lg:text-4xl font-bold leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -35,7 +35,7 @@ export default function CTA() {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-foreground/70 leading-relaxed max-w-2xl mx-auto"
+            className="text-base font-medium leading-relaxed max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -57,16 +57,10 @@ export default function CTA() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Get Started Now
-              <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
+              Mail Us
+              <Mail size={22} className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
-            <motion.button
-              className="px-10 py-5 border-2 border-primary rounded-full text-foreground font-bold text-lg hover:bg-primary/10 transition-colors duration-300 flex items-center gap-3 w-full sm:w-auto justify-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Schedule a Demo
-            </motion.button>
+           
           </motion.div>
         </motion.div>
       </div>
