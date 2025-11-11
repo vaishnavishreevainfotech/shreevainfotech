@@ -19,13 +19,14 @@ export default function Stats() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="mb-14"
         >
-          <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold leading-tight mb-3"
+          >
             Our{" "}
             <span className="text-transparent bg-gradient-to-r from-cyan-500 to-emerald-500 bg-clip-text">Impact</span>
           </h2>
-          <p className="text-xl text-foreground/60 max-w-2xl">
+          <p className="text-base font-medium max-w-2xl">
             Building tomorrow's workforce today with innovation and excellence
           </p>
         </motion.div>

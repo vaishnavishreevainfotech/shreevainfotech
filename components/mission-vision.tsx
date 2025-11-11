@@ -7,80 +7,82 @@ export default function MissionVision() {
   return (
     <section
       id="mission-vision"
-      className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50 overflow-hidden"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900"
     >
-      <div className="max-w-6xl mx-auto">
+      {/* Decorative gradient light */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-emerald-500/20 blur-3xl rounded-full" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-8 text-center"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Mission & Vision</h2>
-          <div className="flex justify-center gap-2 mt-4">
-            <div className="h-1 w-8 bg-primary rounded-full" />
-            <div className="h-1 w-8 bg-accent rounded-full" />
+          <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
+            Mission <span className="text-emerald-400">&</span> Vision
+          </h2>
+          <p className="text-white mt-4  text-base font-medium mx-auto">
+            Driving innovation, integrity, and impact — shaping the future of technology-enabled excellence.
+          </p>
+          <div className="flex justify-center gap-2 mt-6">
+            <div className="h-1 w-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full" />
+            <div className="h-1 w-8 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full" />
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Mission Card */}
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          {/* Vision Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-200 p-8 hover:shadow-lg transition-shadow duration-300"
+            className="relative group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg overflow-hidden shadow-xl transition-all duration-500 "
           >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              initial={false}
-            />
+            {/* Gradient glow overlay */}
+            <div className="absolute inset-0 opacity-0  transition-opacity duration-700 bg-gradient-to-br from-emerald-500/10 via-cyan-500/10 to-transparent" />
 
-            <div className="relative z-10">
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <Eye className="w-6 h-6 text-white" strokeWidth={1.5} />
-              </motion.div>
+            <div className="relative z-10 p-10">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/30  transition-transform duration-300">
+                  <Eye className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Our Vision</h3>
+              </div>
 
-              <h3 className="text-2xl font-bold text-orange-900 mb-3">Our Vision</h3>
-              <p className="text-orange-800/80 leading-relaxed">
-                To be a globally recognized leader in BPO and IT-enabled services through innovation and customer
-                satisfaction.
+              <p className="text-white/80 leading-relaxed">
+                To be a globally recognized leader in business process and IT-enabled services —  
+                redefining operational excellence through innovation, technology, and customer success.
               </p>
             </div>
           </motion.div>
 
           {/* Mission Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.3 }}
             viewport={{ once: true }}
-            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 p-8 hover:shadow-lg transition-shadow duration-300"
+            className="relative group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg overflow-hidden shadow-xl transition-all duration-500 "
           >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              initial={false}
-            />
+            {/* Gradient glow overlay */}
+            <div className="absolute inset-0 opacity-0  transition-opacity duration-700 bg-gradient-to-br from-blue-500/10 via-cyan-400/10 to-transparent" />
 
-            <div className="relative z-10">
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: 0.3 }}
-                className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <Target className="w-6 h-6 text-white" strokeWidth={1.5} />
-              </motion.div>
+            <div className="relative z-10 p-10">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/30  transition-transform duration-300">
+                  <Target className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Our Mission</h3>
+              </div>
 
-              <h3 className="text-2xl font-bold text-blue-900 mb-3">Our Mission</h3>
-              <p className="text-blue-800/80 leading-relaxed">
-                Deliver high-quality, technology-driven outsourcing solutions that empower clients to grow.
+              <p className="text-white/80 leading-relaxed">
+                To deliver innovative, high-quality, and scalable outsourcing solutions  
+                that empower businesses to focus on what truly matters — growth, excellence, and impact.
               </p>
             </div>
           </motion.div>

@@ -46,20 +46,20 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden"
+      className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="mb-20 max-w-2xl"
+          className="mb-14 max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold leading-tight mb-3">
             Services That{" "}
             <span className="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">Transform</span>
           </h2>
-          <p className="text-xl text-foreground/60">
+          <p className="text-base font-medium max-w-2xl">
             Comprehensive solutions designed to accelerate your business growth
           </p>
         </motion.div>
@@ -133,12 +133,7 @@ function ServiceCard({ service, delay, index, isLarge = false }: any) {
             {service.title}
           </h3>
           <p className="text-white/85 mb-4 text-sm md:text-base leading-relaxed">{service.description}</p>
-          <motion.div
-            className="flex items-center gap-2 text-cyan-300 group-hover:gap-3 transition-all opacity-0 group-hover:opacity-100"
-            initial={false}
-          >
-            Explore <ArrowRight size={18} />
-          </motion.div>
+        
         </motion.div>
       </div>
     </motion.div>

@@ -19,11 +19,11 @@ export default function About() {
         <img
           src="/modern-office-team-collaboration-meeting-business.jpg"
           alt="Background"
-          className="absolute -top-40 -right-20 w-[600px] h-[500px] object-cover opacity-30 blur-sm transform rotate-12 scale-110"
+          className="absolute -top-35 -left-75 w-[600px] h-[500px] object-cover opacity-30 blur-sm transform rotate-12 scale-110"
         />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content with diagonal layout */}
           <motion.div
@@ -41,15 +41,15 @@ export default function About() {
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                Who We <span className="gradient-text">Are</span>
+                Who We <span className="text-transparent bg-gradient-to-r from-cyan-500 to-emerald-500 bg-clip-text">Are</span>
               </motion.h2>
-              <p className="text-base text-foreground/70 leading-relaxed">
+              <p className="text-base font-medium leading-relaxed">
                 Founded in September 2025, we are a next-generation BPO and IT-enabled service provider dedicated to
                 delivering excellence.
               </p>
             </div>
 
-            <div className="space-y-2 pt-4 border-t border-primary/20">
+            <div className="space-y-4 pt-4 border-t border-primary/20">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -57,10 +57,10 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-2 group cursor-pointer"
+                  className="flex items-start gap-3 group cursor-pointer"
                 >
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm text-foreground/75 group-hover:text-foreground transition-colors">
+                  <span className="text-sm  group-hover:text-foreground transition-colors">
                     {service}
                   </span>
                 </motion.div>

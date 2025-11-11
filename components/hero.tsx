@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 
 export default function Hero() {
@@ -83,26 +82,42 @@ export default function Hero() {
             </button>
           </motion.div> */}
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="grid grid-cols-3 gap-4 pt-10 mt-6 border-t border-white/10"
-          >
-            {[
-              { number: "5K+", label: "Professionals" },
-              { number: "18+", label: "Clients" },
-              { number: "3", label: "Offices" },
-            ].map((stat, i) => (
-              <motion.div key={i} whileHover={{ scale: 1.05 }} className="group cursor-pointer">
-                <div className="text-3xl font-bold text-emerald-400 group-hover:text-cyan-400 transition-colors">
-                  {stat.number}
-                </div>
-                <p className="text-white/70 text-sm mt-1">{stat.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* Stats Section */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+  className="relative mt-12 border-t border-white/10 pt-10"
+>
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+    {[
+      { number: "5K+", label: "Professionals" },
+      { number: "18+", label: "Clients" },
+      { number: "3", label: "Offices" },
+    ].map((stat, i) => (
+      <motion.div
+        key={i}
+        className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-md  transition-all duration-300"
+      >
+        {/* Glow Border Effect */}
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 via-emerald-400/20 to-cyan-400/20 opacity-0  blur-xl transition-all duration-500" />
+        
+        {/* Stat Number */}
+        <h3 className="relative text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-md">
+          {stat.number}
+        </h3>
+
+        {/* Label */}
+        <p className="relative mt-2 text-white/70 text-sm sm:text-base tracking-wide  transition-colors">
+          {stat.label}
+        </p>
+
+       
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+
         </motion.div>
       </div>
 
