@@ -60,24 +60,29 @@ export default function Locations() {
           </p>
         </motion.div>
 
-        {/* Tabs */}
-        <div className="flex gap-3 mb-12 overflow-x-auto pb-4 justify-center lg:justify-start">
-          {offices.map((office, index) => (
-            <motion.button
-              key={index}
-              onClick={() => setActiveTab(index)}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className={`px-7 py-3 rounded-full font-semibold transition-all duration-300 whitespace-nowrap ${
-                activeTab === index
-                  ? "bg-primary text-white shadow-md"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              {office.city}
-            </motion.button>
-          ))}
-        </div>
+     {/* Tabs */}
+<div className="relative -mx-4 sm:mx-0 px-4">
+  <div
+    className="flex gap-3 mb-12 overflow-x-auto pb-4 justify-start lg:justify-start scroll-smooth scrollbar-hide"
+  >
+    {offices.map((office, index) => (
+      <motion.button
+        key={index}
+        onClick={() => setActiveTab(index)}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.97 }}
+        className={`flex-shrink-0 px-6 py-3 rounded-full font-semibold transition-all duration-300 whitespace-nowrap ${
+          activeTab === index
+            ? "bg-primary text-white shadow-md"
+            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+        }`}
+      >
+        {office.city}
+      </motion.button>
+    ))}
+  </div>
+</div>
+
 
         {/* Content */}
         <motion.div
