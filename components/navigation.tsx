@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 
@@ -21,6 +21,7 @@ export default function Navigation() {
   }, [])
 
   return (
+    <>
     <motion.nav
       initial={{ backgroundColor: "rgba(255,255,255,0)" }}
       animate={{
@@ -50,7 +51,7 @@ export default function Navigation() {
               width={300}
               height={300}
               className={`transition-all duration-500 ${
-                isScrolled ? "w-[120px]" : "w-[160px]"
+                isScrolled ? "w-[120px]" : "w-[140px] lg:w-[160px]"
               }`}
               priority
             />
@@ -80,7 +81,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden transition-colors ${
+            className={`md:hidden transition-colors pe-5 ${
               isScrolled ? "text-gray-900" : "text-white"
             }`}
           >
@@ -88,34 +89,51 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className={`md:hidden pb-4 space-y-2 ${
-              isScrolled
-                ? "bg-white/70 backdrop-blur-md shadow-md rounded-b-xl"
-                : "bg-transparent"
-            }`}
-          >
-            {menuItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className={`block px-4 py-2 rounded-lg transition-colors font-medium ${
-                  isScrolled
-                    ? "text-gray-900 hover:bg-gray-100"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                {item}
-              </a>
-            ))}
-          </motion.div>
-        )}
+  
+
       </div>
     </motion.nav>
+       {/* Mobile Sidebar Menu */}
+<AnimatePresence>
+  {isOpen && (
+    <>
+      {/* Overlay background */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0   z-40"
+        onClick={() => setIsOpen(false)} // Close sidebar when clicking outside
+      />
+
+      {/* Sidebar itself */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100%" }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className={`fixed  top-0 left-0 h-full w-64 z-50 p-6 flex flex-col gap-4 shadow-xl ${
+          isScrolled
+            ? "bg-white/80 backdrop-blur-md text-gray-900"
+            : "bg-gray-900/95 text-white"
+        }`}
+      >
+       
+
+        {menuItems.map((item) => (
+          <a
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            onClick={() => setIsOpen(false)}
+            className="block px-3 py-2 rounded-lg text-base font-medium hover:bg-primary/10 transition-colors"
+          >
+            {item}
+          </a>
+        ))}
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
+    </>
   )
 }

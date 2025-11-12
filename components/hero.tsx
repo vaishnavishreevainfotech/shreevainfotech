@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-0 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-50 lg:pt-0 overflow-hidden">
       {/* CHANGE: Full background image with overlay for dramatic effect */}
       <div className="absolute inset-0">
         <Image
