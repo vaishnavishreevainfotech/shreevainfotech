@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Twitter, Linkedin, Facebook, MapPin, Mail, Phone } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -20,10 +21,16 @@ export default function Footer() {
             className="space-y-5"
           >
             <div className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
-              <span className="font-bold text-lg tracking-wide">SHREEVA</span>
+              
+               <Image
+                            src="/shreevalogo.png"
+                            alt="logo"
+                            width={300}
+                            height={300}
+                            className={`transition-all duration-500 w-[180px]
+                            }`}
+                            priority
+                          />
             </div>
 
             <p className="text-foreground/60 text-sm leading-relaxed max-w-xs">
@@ -54,10 +61,10 @@ export default function Footer() {
           >
             <h4 className="font-semibold text-foreground mb-3">Company</h4>
             <div className="space-y-2">
-              {["About Us", "Our Values", "Careers", "Blog", "Contact", "Privacy Policy"].map((item) => (
+              {["About", "Services", "Values", "Locations", "Contact"].map((item) => (
                 <a
                   key={item}
-                  href="#"
+                  href={`#${item.toLowerCase()}`}
                   className="block text-foreground/60 hover:text-primary transition-colors text-sm leading-relaxed"
                 >
                   {item}
@@ -77,18 +84,18 @@ export default function Footer() {
             <h4 className="font-semibold text-foreground mb-3">Contact</h4>
             <div className="space-y-3 text-sm leading-relaxed">
               <a
-                href="tel:+918080808080"
+                href="tel:+918639873917"
                 className="flex items-center gap-3 text-foreground/60 hover:text-primary transition-colors"
               >
                 <Phone size={16} />
-                +91 80 XXXX XXXX
+                +91 8639873917
               </a>
               <a
-                href="mailto:hello@shreeva.in"
+                href="mailto:vaishnavi.shreevainfotech@gmail.com"
                 className="flex items-center gap-3 text-foreground/60 hover:text-primary transition-colors"
               >
                 <Mail size={16} />
-                hello@shreeva.in
+                vaishnavi.shreevainfotech@gmail.com
               </a>
               <div className="flex items-start gap-3 text-foreground/60 pt-1">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />

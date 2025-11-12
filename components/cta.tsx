@@ -52,14 +52,16 @@ export default function CTA() {
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <motion.button
-              className="group px-10 py-5 bg-gradient-to-r from-primary to-accent rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 flex items-center gap-3 w-full sm:w-auto justify-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Mail Us
-              <Mail size={22} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+           <motion.a
+  href="mailto:vaishnavi.shreevainfotech@gmail.com"
+  className="group px-10 py-5 bg-gradient-to-r from-primary to-accent rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 flex items-center gap-3 w-full sm:w-auto justify-center"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
+  Mail Us
+  <Mail size={22} className="group-hover:translate-x-1 transition-transform" />
+</motion.a>
+
            
           </motion.div>
         </motion.div>
