@@ -15,7 +15,9 @@ export default function Locations() {
       email: "vaishnavi.shreevainfotech@gmail.com",
       image: "/modern-office-team-collaboration-meeting-business.jpg",
       description: "Our innovation hub and primary headquarters driving excellence.",
-      location : "I48, AS Arcade, Sector 5, Outer Ring Rd, Teacher's Colony, Jakkasandra, HSR Layout, Bengaluru, Karnataka 560102"
+      location : `I48, AS Arcade, Sector 5, Outer Ring Rd,
+       Teacher's Colony, Jakkasandra, HSR Layout,
+       Bengaluru, Karnataka 560102`
     },
     {
       city: "Chennai",
@@ -24,7 +26,9 @@ export default function Locations() {
       email: "vaishnavi.shreevainfotech@gmail.com",
       image: "/office-workspace-organized-team-working.jpg",
       description: "Strategic operations center serving South India region.",
-      location : "No, 81, SREE TEJA TOWERS, Nelson Manickam Rd, Rajaram Mehta Nagar, Aminjikarai, Chennai, Tamil Nadu 600030"
+      location : `No, 81, SREE TEJA TOWERS, Nelson Manickam Rd,
+       Rajaram Mehta Nagar, Aminjikarai, Chennai,
+        Tamil Nadu 600030`
 
     },
     {
@@ -34,7 +38,9 @@ export default function Locations() {
       email: "vaishnavi.shreevainfotech@gmail.com",
       image: "/call-center-headphones-team-customer-service.jpg",
       description: "Customer support and service excellence hub.",
-      location : "1st floor, N L Naidu building, 6-1-11C , Near to tirupati east church, RS Gardens, Tirupati , Andhra Pradesh - 517507"
+      location : `1st floor, N L Naidu building, 6-1-11C ,
+       Near to tirupati east church, RS Gardens,
+        Tirupati , Andhra Pradesh - 517507`
     },
   ]
 
@@ -154,7 +160,7 @@ export default function Locations() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-500">{item.label}</p>
-                      <p className="font-semibold text-base group-hover:text-primary transition-colors">
+                      <p className="font-semibold text-base group-hover:text-primary transition-colors whitespace-pre-line">
                         {item.value}
                       </p>
                     </div>

@@ -76,9 +76,8 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden transition-colors pe-5 ${
-              isScrolled ? "text-gray-900" : "text-white"
-            }`}
+            className={`md:hidden transition-colors pe-5 text-gray-900 
+            `}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

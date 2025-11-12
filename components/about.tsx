@@ -47,7 +47,7 @@ export default function About() {
             SHREEVA INFO TECH SOLUTIONS PVT LTD. 
               </p>
 
-               <p className="text-base mt-5 font-medium leading-relaxed">
+               <p className="text-base mt-5 font-medium leading-relaxed text-justify">
              WE ARE IN TO next
 generation BPO and IT-enabled service provider. We deliver excellence in customer 
 engagement, back-office operations, and data-driven outsourcing solutions. Our goal is to 
