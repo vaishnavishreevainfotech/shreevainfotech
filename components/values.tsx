@@ -1,18 +1,66 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Heart, Users, Lightbulb, Handshake, CheckCircle, Shield } from "lucide-react"
+import { Check, Shield, Zap, Smile, Heart, Rocket } from "lucide-react"
 
-export default function Values() {
-  const values = [
-    { icon: Heart, title: "Customer Commitment", desc: "We strive to exceed every expectation through dedication and care." },
-    { icon: Handshake, title: "Integrity", desc: "Honesty and transparency are at the heart of everything we do." },
-    { icon: Lightbulb, title: "Innovation", desc: "We embrace creativity and continuous improvement." },
-    { icon: Users, title: "Teamwork", desc: "Collaboration empowers our success and collective growth." },
-    { icon: CheckCircle, title: "Accountability", desc: "We take ownership and deliver results that matter." },
-    { icon: Shield, title: "Data Security", desc: "We ensure privacy and protection at every level." },
-  ]
+const values = [
+  {
+    icon: Check,
+    title: "Reliable",
+    desc: "Our service is built on a foundation of consistency and trust",
+  },
+  {
+    icon: Shield,
+    title: "Secure",
+    desc: "Your data is protected with enterprise-grade security",
+  },
+  {
+    icon: Zap,
+    title: "Fast",
+    desc: "Lightning-quick performance for seamless experience",
+  },
+  {
+    icon: Smile,
+    title: "Friendly",
+    desc: "Intuitive design that everyone can enjoy",
+  },
+  {
+    icon: Heart,
+    title: "Passionate",
+    desc: "Built with love and attention to detail",
+  },
+  {
+    icon: Rocket,
+    title: "Innovative",
+    desc: "Constantly pushing boundaries and exploring new possibilities",
+  },
+]
 
+const getCardStyles = (title: string) => {
+  const styles: Record<string, { bg: string; icon: string; title: string; text: string }> = {
+    Reliable: { bg: "bg-blue-600", icon: "bg-white/20 text-white", title: "text-white", text: "text-white/90" },
+    Secure: { bg: "bg-green-600", icon: "bg-white/20 text-white", title: "text-white", text: "text-white/90" },
+    Fast: { bg: "bg-amber-600", icon: "bg-white/20 text-white", title: "text-white", text: "text-white/90" },
+    Friendly: { bg: "bg-pink-600", icon: "bg-white/20 text-white", title: "text-white", text: "text-white/90" },
+    Passionate: { bg: "bg-red-600", icon: "bg-white/20 text-white", title: "text-white", text: "text-white/90" },
+    Innovative: { bg: "bg-purple-600", icon: "bg-white/20 text-white", title: "text-white", text: "text-white/90" },
+  }
+  return styles[title] || styles["Reliable"]
+}
+
+const getBackgroundImage = (title: string) => {
+  const images: Record<string, string> = {
+    Reliable: "url('/reliable-bg.jpg')",
+    Secure: "url('/secure-bg.jpg')",
+    Fast: "url('/fast-bg.jpg')",
+    Friendly: "url('/friendly-bg.jpg')",
+    Passionate: "url('/passionate-bg.jpg')",
+    Innovative: "url('/innovative-bg.jpg')",
+  }
+  return images[title] || images["Reliable"]
+}
+
+export default function ValueCards() {
   return (
     <section
       id="values"
@@ -50,11 +98,12 @@ export default function Values() {
             <div className="h-1 w-8 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full" />
           </div>
         </motion.div>
-
-        {/* Value Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {values.map((value, index) => {
             const Icon = value.icon
+            const styles = getCardStyles(value.title)
+            const backgroundImage = getBackgroundImage(value.title)
+
             return (
               <motion.div
                 key={index}
@@ -63,28 +112,27 @@ export default function Values() {
                 transition={{ delay: index * 0.08 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -6 }}
-                className="group relative bg-white/70 backdrop-blur-md rounded-2xl p-8 border border-slate-200 hover:border-transparent hover:shadow-xl transition-all duration-300 "
+                className="group relative rounded-2xl p-8 border border-white/20 hover:border-white/40 hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 100%), ${backgroundImage}`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                {/* Gradient overlay */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-100 via-emerald-100 to-cyan-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  initial={false}
-                />
-
                 <div className="relative z-10">
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: index * 0.08 + 0.1 }}
-                    className="w-12 h-12 rounded-xl group-hover:border-white border-1 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+                    className={`w-12 h-12 rounded-xl border border-1 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform ${styles.icon}`}
                   >
-                    <Icon className="w-6 h-6 " />
+                    <Icon className="w-6 h-6" />
                   </motion.div>
 
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">
+                  <h3 className={`text-lg font-semibold mb-2 group-hover:opacity-80 transition-opacity ${styles.title}`}>
                     {value.title}
                   </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed group-hover:text-slate-700 transition-colors">
+                  <p className={`text-sm leading-relaxed group-hover:opacity-90 transition-opacity ${styles.text}`}>
                     {value.desc}
                   </p>
                 </div>

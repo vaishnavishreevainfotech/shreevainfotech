@@ -27,7 +27,7 @@ export default function Navigation() {
       animate={{
         backgroundColor: isScrolled
           ? "rgba(255,255,255,0.6)"
-          : "rgba(255,255,255,0)",
+          : "rgba(255,255,255,0.8)",
         backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
       }}
       transition={{ duration: 0.4 }}
@@ -66,14 +66,9 @@ export default function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.08 }}
                 href={`#${item.toLowerCase()}`}
-                className={`text-sm font-medium transition-all duration-300 relative group ${
-                  isScrolled
-                    ? "text-gray-900 hover:text-purple-600"
-                    : "text-white hover:text-purple-300"
-                }`}
+                className={`text-sm font-bold transition-all duration-300 relative group text-gray-900 hover:text-cyan-600`}
               >
                 {item}
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-purple-600 to-cyan-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
               </motion.a>
             ))}
           </div>
