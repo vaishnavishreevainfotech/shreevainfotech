@@ -11,26 +11,30 @@ export default function Locations() {
     {
       city: "Bangalore",
       region: "Head Office",
-      phone: "+91 (80) XXXX XXXX",
-      email: "bangalore@shreeva.in",
+      phone: "+91 8639873917",
+      email: "vaishnavi.shreevainfotech@gmail.com",
       image: "/modern-office-team-collaboration-meeting-business.jpg",
       description: "Our innovation hub and primary headquarters driving excellence.",
+      location : "I48, AS Arcade, Sector 5, Outer Ring Rd, Teacher's Colony, Jakkasandra, HSR Layout, Bengaluru, Karnataka 560102"
     },
     {
       city: "Chennai",
       region: "Operations Hub",
-      phone: "+91 (44) XXXX XXXX",
-      email: "chennai@shreeva.in",
+      phone: "+91 8639873917",
+      email: "vaishnavi.shreevainfotech@gmail.com",
       image: "/office-workspace-organized-team-working.jpg",
       description: "Strategic operations center serving South India region.",
+      location : "No, 81, SREE TEJA TOWERS, Nelson Manickam Rd, Rajaram Mehta Nagar, Aminjikarai, Chennai, Tamil Nadu 600030"
+
     },
     {
       city: "Tirupati",
       region: "Support Center",
-      phone: "+91 (877) XXXX XXXX",
-      email: "tirupati@shreeva.in",
+      phone: "+91 8639873917",
+      email: "vaishnavi.shreevainfotech@gmail.com",
       image: "/call-center-headphones-team-customer-service.jpg",
       description: "Customer support and service excellence hub.",
+      location : "1st floor, N L Naidu building, 6-1-11C , Near to tirupati east church, RS Gardens, Tirupati , Andhra Pradesh - 517507"
     },
   ]
 
@@ -135,7 +139,7 @@ export default function Locations() {
                   value: offices[activeTab].email,
                   link: `mailto:${offices[activeTab].email}`,
                 },
-                { icon: MapPin, label: "Location", value: "Get Directions", link: "#" },
+                { icon: MapPin, label: "Location", value: offices[activeTab].location, link: "#" },
               ].map((item, idx) => {
                 const Icon = item.icon
                 return (

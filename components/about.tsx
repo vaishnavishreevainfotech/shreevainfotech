@@ -43,13 +43,19 @@ export default function About() {
               >
                 Who We <span className="text-transparent bg-gradient-to-r from-cyan-500 to-emerald-500 bg-clip-text">Are</span>
               </motion.h2>
-              <p className="text-base font-medium leading-relaxed">
-                Founded in September 2025, we are a next-generation BPO and IT-enabled service provider dedicated to
-                delivering excellence.
+              <p className="text-base text-blue-900 py-1 font-bold leading-relaxed">
+            SHREEVA INFO TECH SOLUTIONS PVT LTD. 
+              </p>
+
+               <p className="text-base mt-5 font-medium leading-relaxed">
+             WE ARE IN TO next
+generation BPO and IT-enabled service provider. We deliver excellence in customer 
+engagement, back-office operations, and data-driven outsourcing solutions. Our goal is to 
+empower businesses through efficiency, innovation, and smart process management
               </p>
             </div>
 
-            <div className="space-y-4 pt-4 border-t border-primary/20">
+            {/* <div className="space-y-4 pt-4 border-t border-primary/20">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -65,7 +71,7 @@ export default function About() {
                   </span>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right - Large image with frames */}
