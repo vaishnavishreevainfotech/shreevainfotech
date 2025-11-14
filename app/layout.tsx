@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   title: "SHREEVA - BPO & IT Solutions",
   description: "Next-generation BPO and IT-enabled service provider",
    icons: {
+     icon: [
+      {
+        url: "/icon.png",
+        type: "image/png",
+      },
+    ],
     apple: "/apple-icon.png",
   },
 }
