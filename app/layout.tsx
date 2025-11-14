@@ -9,8 +9,7 @@ const firaCode = Fira_Code({ subsets: ["latin"], weight: ["400", "500"] })
 
 export const metadata: Metadata = {
   title: "SHREEVA - BPO & IT Solutions",
-  description: "Next-generation BPO and IT-enabled service provider",
-  generator: "v0.app",
+  description: "Next-generation BPO and IT-enabled service provider"
 }
 
 export default function RootLayout({
